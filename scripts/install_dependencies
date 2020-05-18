@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /dist/
+
+npm install -g pm2
