@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/
+  - source: /server/app.js
+    destination: /var/exgen-aws
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
