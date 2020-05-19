@@ -1,14 +1,21 @@
 version: 0.0
 os: linux
 files:
-  - source: /dist
-    destination: /dist/
+  - source: dist/
+    destination: /var/www/
 hooks:
-  AfterInstall:
-    - location: scripts/install_dependencies
-      timeout: 100
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_server
-      timeout: 100
+    - location: scripts/start_server.sh
+      timeout: 300
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: scripts/validate_server.sh
+      timeout: 300
       runas: root
