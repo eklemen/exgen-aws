@@ -14,3 +14,12 @@ npm run prod
 npm run build
 pm2 start dist/bin/www.js
 ```
+
+## Endpoints
+```
+# hello world
+GET /api
+
+# user route
+GET /api/users
+```
